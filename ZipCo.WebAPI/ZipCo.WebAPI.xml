@@ -1,0 +1,230 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ZipCo.WebAPI</name>
+    </assembly>
+    <members>
+        <member name="T:ZipCo.WebAPI.Controllers.AccountController">
+            <summary>
+            Account Controller.
+            </summary>
+        </member>
+        <member name="M:ZipCo.WebAPI.Controllers.AccountController.#ctor(Microsoft.Extensions.Logging.ILogger{ZipCo.WebAPI.Controllers.AccountController},ZipCo.WebAPI.Services.Interface.IService{ZipCo.WebAPI.ViewModels.AccountResponse,ZipCo.WebAPI.ViewModels.AccountRequest})">
+            <summary>
+            Account Controller Constructor.
+            </summary>
+            <param name="logger">Logger</param>
+            <param name="accountService">Account Service</param>
+        </member>
+        <member name="M:ZipCo.WebAPI.Controllers.AccountController.List">
+            <summary>
+            List all accounts.
+            </summary>
+            <returns>Return a list of accounts.</returns>
+        </member>
+        <member name="M:ZipCo.WebAPI.Controllers.AccountController.Create(ZipCo.WebAPI.ViewModels.AccountRequest)">
+            <summary>
+            Create an account.
+            </summary>
+            <param name="request">Account View Model</param>
+            <returns>Return the created account.</returns>
+        </member>
+        <member name="T:ZipCo.WebAPI.Controllers.UserController">
+            <summary>
+            User Controller.
+            </summary>
+        </member>
+        <member name="M:ZipCo.WebAPI.Controllers.UserController.#ctor(Microsoft.Extensions.Logging.ILogger{ZipCo.WebAPI.Controllers.UserController},ZipCo.WebAPI.Services.Interface.IUserService)">
+            <summary>
+            User Controller Constructor.
+            </summary>
+            <param name="logger">Logger</param>
+            <param name="userService">User Service</param>
+        </member>
+        <member name="M:ZipCo.WebAPI.Controllers.UserController.List">
+            <summary>
+            List all users.
+            </summary>
+            <returns>Return a list of users.</returns>
+        </member>
+        <member name="M:ZipCo.WebAPI.Controllers.UserController.Create(ZipCo.WebAPI.ViewModels.UserRequest)">
+            <summary>
+            Create a user.
+            </summary>
+            <param name="request">User request</param>
+            <returns>Return the created user.</returns>
+        </member>
+        <member name="M:ZipCo.WebAPI.Controllers.UserController.Get(System.String)">
+            <summary>
+            Get a user by email address.
+            </summary>
+            <param name="emailAddress">Email address</param>
+            <returns>Return a user.</returns>
+        </member>
+        <member name="T:ZipCo.WebAPI.ViewModels.AccountRequest">
+            <summary>
+            Account Request Class.
+            </summary>
+        </member>
+        <member name="P:ZipCo.WebAPI.ViewModels.AccountRequest.User">
+            <summary>
+            User.
+            </summary>
+        </member>
+        <member name="P:ZipCo.WebAPI.ViewModels.AccountRequest.AccountNumber">
+            <summary>
+            Account Number.
+            </summary>
+        </member>
+        <member name="T:ZipCo.WebAPI.ViewModels.AccountResponse">
+            <summary>
+            Account Response Class.
+            </summary>
+        </member>
+        <member name="P:ZipCo.WebAPI.ViewModels.AccountResponse.Account">
+            <summary>
+            Account.
+            </summary>
+        </member>
+        <member name="T:ZipCo.WebAPI.ViewModels.BaseResponse">
+            <summary>
+            Base Response Class.
+            </summary>
+        </member>
+        <member name="P:ZipCo.WebAPI.ViewModels.BaseResponse.Success">
+            <summary>
+            Success.
+            </summary>
+        </member>
+        <member name="P:ZipCo.WebAPI.ViewModels.BaseResponse.ErrorMessage">
+            <summary>
+            Error message if any.
+            </summary>
+        </member>
+        <member name="T:ZipCo.WebAPI.ViewModels.UserRequest">
+            <summary>
+            User Request Class.
+            </summary>
+        </member>
+        <member name="P:ZipCo.WebAPI.ViewModels.UserRequest.Name">
+            <summary>
+            Name.
+            </summary>
+        </member>
+        <member name="P:ZipCo.WebAPI.ViewModels.UserRequest.EmailAddress">
+            <summary>
+            Email Address.
+            </summary>
+        </member>
+        <member name="P:ZipCo.WebAPI.ViewModels.UserRequest.Password">
+            <summary>
+            Password.
+            </summary>
+        </member>
+        <member name="P:ZipCo.WebAPI.ViewModels.UserRequest.MonthlySalary">
+            <summary>
+            Monthly Salary.
+            </summary>
+        </member>
+        <member name="P:ZipCo.WebAPI.ViewModels.UserRequest.MonthlyExpenses">
+            <summary>
+            Monthly Expenses.
+            </summary>
+        </member>
+        <member name="T:ZipCo.WebAPI.ViewModels.UserResponse">
+            <summary>
+            User Response Class.
+            </summary>
+        </member>
+        <member name="P:ZipCo.WebAPI.ViewModels.UserResponse.User">
+            <summary>
+            User.
+            </summary>
+        </member>
+        <member name="T:ZipCo.WebAPI.Services.AccountService">
+            <summary>
+            Account Service Class.
+            </summary>
+        </member>
+        <member name="M:ZipCo.WebAPI.Services.AccountService.#ctor(Microsoft.Extensions.Logging.ILogger{ZipCo.WebAPI.Services.AccountService},ZipCo.Data.Repositories.Interfaces.IRepository{ZipCo.Data.Entities.Account},ZipCo.Data.Repositories.Interfaces.IUserRepository,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Account Service Constructor.
+            </summary>
+            <param name="logger">Logger</param>
+            <param name="accountRepository">Account Repository</param>
+            <param name="userRepository">User Repository</param>
+            <param name="configuration">Configuration</param>
+        </member>
+        <member name="M:ZipCo.WebAPI.Services.AccountService.List">
+            <summary>
+            List all accounts.
+            </summary>
+            <returns>Return a list of accounts.</returns>
+        </member>
+        <member name="M:ZipCo.WebAPI.Services.AccountService.Create(ZipCo.WebAPI.ViewModels.AccountRequest)">
+            <summary>
+            Create an account.
+            </summary>
+            <param name="request">Account request</param>
+            <returns>Return the created account.</returns>
+        </member>
+        <member name="M:ZipCo.WebAPI.Services.AccountService.GetMinAllowedCredit">
+            <summary>
+            Get the minimum allowed credit as per business requirement.
+            </summary>
+            <returns>Return the minimum allowed credit.</returns>
+        </member>
+        <member name="M:ZipCo.WebAPI.Services.Interface.IService`2.List">
+            <summary>
+            List all T objects.
+            </summary>
+            <returns>Return a list of T objects.</returns>
+        </member>
+        <member name="M:ZipCo.WebAPI.Services.Interface.IService`2.Create(`1)">
+            <summary>
+            Create a T object.
+            </summary>
+            <param name="request">TRequest request</param>
+            <returns>Return the created object.</returns>
+        </member>
+        <member name="M:ZipCo.WebAPI.Services.Interface.IUserService.Get(System.String)">
+            <summary>
+            Get a user by email address.
+            </summary>
+            <param name="emailAddress">Email address</param>
+            <returns>Return a user.</returns>
+        </member>
+        <member name="T:ZipCo.WebAPI.Services.UserService">
+            <summary>
+            User Service Class.
+            </summary>
+        </member>
+        <member name="M:ZipCo.WebAPI.Services.UserService.#ctor(Microsoft.Extensions.Logging.ILogger{ZipCo.WebAPI.Services.UserService},ZipCo.Data.Repositories.Interfaces.IUserRepository)">
+            <summary>
+            User Service Constructor.
+            </summary>
+            <param name="logger">Logger</param>
+            <param name="userRepository">User Repository</param>
+        </member>
+        <member name="M:ZipCo.WebAPI.Services.UserService.List">
+            <summary>
+            List all users.
+            </summary>
+            <returns>Return a list of users.</returns>
+        </member>
+        <member name="M:ZipCo.WebAPI.Services.UserService.Create(ZipCo.WebAPI.ViewModels.UserRequest)">
+            <summary>
+            Create a user.
+            </summary>
+            <param name="request">User request</param>
+            <returns>Return the created user.</returns>
+        </member>
+        <member name="M:ZipCo.WebAPI.Services.UserService.Get(System.String)">
+            <summary>
+            Get a user by email address.
+            </summary>
+            <param name="emailAddress">Email address</param>
+            <returns>Return a user.</returns>
+        </member>
+    </members>
+</doc>
